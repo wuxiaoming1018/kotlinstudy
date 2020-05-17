@@ -4,6 +4,7 @@ fun main() {
     computer.subtract()
     computer.multiply()
     computer.divide()
+
     computer.pow(5)
 }
 
