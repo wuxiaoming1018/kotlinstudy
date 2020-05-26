@@ -57,6 +57,13 @@ open class PersonA(age: Int, sex: String, height: Double, weight: Double) {
     override fun toString(): String {
         return "age:$age,sex:$sex,height:$height,weight:$weight"
     }
+
+    override fun equals(other: Any?): Boolean {
+        return when (other) {
+            !is PersonA -> false
+            else -> this === other || age == other.age && height == other.height
+        }
+    }
 }
 
 class StudentA(age: Int, sex: String, height: Double, weight: Double) : PersonA(age, sex, height, weight) {
